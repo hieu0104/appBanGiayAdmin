@@ -168,15 +168,16 @@
             android:layout_marginLeft="40dp"
             android:orientation="vertical">
 
-            <ImageView
-                android:layout_width="40dp"
+            <ImageButton
+                android:id="@+id/imgBtn_my_product"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
 
-                android:layout_height="40dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="20dp"
                 android:background="#FB0C0C"
+                android:contentDescription="@string/img_my_product"
                 android:src="@drawable/ic_shop" />
-
 
             <TextView
                 android:layout_width="wrap_content"
@@ -193,13 +194,14 @@
             android:layout_marginLeft="40dp"
             android:orientation="vertical">
 
-            <ImageView
-                android:layout_width="40dp"
-
-                android:layout_height="40dp"
+            <ImageButton
+                android:id="@+id/imgBtn_oder"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="20dp"
                 android:background="#FFC107"
+                android:contentDescription="@string/img_finance"
                 android:src="@drawable/ic_currency" />
 
 
@@ -207,7 +209,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="Tài chính   "
+                android:text="Đơn hàng  "
                 android:textSize="10sp" />
         </LinearLayout>
 
@@ -217,21 +219,21 @@
             android:layout_marginLeft="40dp"
             android:orientation="vertical">
 
-            <ImageView
-                android:layout_width="40dp"
-
-                android:layout_height="40dp"
+            <ImageButton
+                android:id="@+id/imgBtn_customer"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="20dp"
                 android:background="#E11D1D"
+                android:contentDescription="@string/imgBtn_customer"
                 android:src="@drawable/ic_chart" />
-
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="Hiệu quả bán "
+                android:text="Khách hàng"
                 android:textSize="10sp" />
         </LinearLayout>
 
@@ -327,9 +329,9 @@
         android:orientation="vertical">
 
         <de.hdodenhof.circleimageview.CircleImageView
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_marginLeft="290dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="330dp"
             android:layout_marginTop="150dp"
             android:src="@drawable/ic_notification">
 

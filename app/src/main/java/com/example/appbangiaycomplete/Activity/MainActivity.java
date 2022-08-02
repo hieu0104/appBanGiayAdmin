@@ -9,6 +9,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -18,7 +19,7 @@ import com.example.appbangiaycomplete.R;
 import com.example.appbangiaycomplete.fragment.HomeFragment;
 import com.example.appbangiaycomplete.fragment.QuanLyDonHangFragment;
 import com.example.appbangiaycomplete.fragment.QuanLyKhachHangFragment;
-import com.example.appbangiaycomplete.fragment.QuanLySanPham;
+import com.example.appbangiaycomplete.fragment.QuanLySanPhamFragment;
 import com.google.android.material.navigation.NavigationView;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -27,6 +28,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private static final int FRAGMENT_ODER_MANAGER = 2;
     private static final int FRAGMENT_CUSTOMER_MANAGER = 3;
     private int mcurrentFragment = FRAGMENT_HOME;
+    MainActivity mainActivity;
     //
 //    Toolbar toolbar;
 //    NavigationView navigationView;
@@ -49,12 +51,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         NavigationView navigationView = findViewById(R.id.navication_view);
         navigationView.setNavigationItemSelectedListener(this);
         //
-        replaceFragment(new HomeFragment());
+      replaceFragment(new HomeFragment());
         navigationView.getMenu().findItem(R.id.nav_home).setCheckable(true);
 //add fragment Quan ly khach hang
-        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-        fragmentTransaction.add(R.id.quan_ly_khach_hang, new QuanLyKhachHangFragment());
-        fragmentTransaction.commit();
+//        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+//        fragmentTransaction.add(R.id.quan_ly_khach_hang, new QuanLyKhachHangFragment());
+//        fragmentTransaction.commit();
 
 //        ActionBar();
 //        AnhXa();
@@ -80,17 +82,17 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             if (mcurrentFragment != FRAGMENT_PRODUCT_MANAGER) {
                 Toast.makeText(this, "bạn chọn Quản lí sản phẩm  ", Toast.LENGTH_SHORT).show();
 
-                replaceFragment(new QuanLySanPham());
+                replaceFragment(new QuanLySanPhamFragment());
                 mcurrentFragment = FRAGMENT_PRODUCT_MANAGER;
             }
         } else if (id == R.id.nav_oder_manager) {
 
             if (mcurrentFragment != FRAGMENT_ODER_MANAGER) {
                 Toast.makeText(this, "bạn chọn Quản lí đơn hàng ", Toast.LENGTH_SHORT).show();
-
-                replaceFragment(new QuanLyDonHangFragment());
-
-                mcurrentFragment = FRAGMENT_ODER_MANAGER;
+//
+//                replaceFragment(new QuanLyDonHangFragment());
+//
+//                mcurrentFragment = FRAGMENT_ODER_MANAGER;
             }
         } else if (id == R.id.nav_customer_manager) {
 
@@ -104,9 +106,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             }
 
         } else if (id == R.id.nav_account) {
+            Toast.makeText(this, "Account được chọn ", Toast.LENGTH_SHORT).show();
+//            startActivity(new Intent(mainActivity,Test01.class));
 
 
         } else if (id == R.id.nav_change_pass) {
+            Toast.makeText(this, "Change password  được chọn ", Toast.LENGTH_SHORT).show();
 
             drawerLayout.closeDrawer(GravityCompat.START);
 
@@ -115,8 +120,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         return true;
     }
 
-//    private void replaceFragment(QuanLySanPhamActivity quanLySanPhamActivity) {
-//    }
 
     @Override
     public void onBackPressed() {
@@ -131,6 +134,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         transaction.replace(R.id.content_frame, fragment);
         transaction.commit();
     }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_nav, menu);
+        return super.onCreateOptionsMenu(menu);
+
+
+    }
+    //
 // thanh actionbar với toolbar
 //    private void ActionBar() {
 ////ham ho tro toolbar
@@ -146,22 +157,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 //
 //    }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_nav, menu);
-        return super.onCreateOptionsMenu(menu);
 
-
-    }
-
+//
 //    @Override
 //    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
 //        switch (item.getItemId()) {
 //
 //            case R.id.nav_home:
-//                Intent intent = new Intent(MainActivity.this, QuanLySanPhamActivity.class);
-//                Toast.makeText(this, "bạn chọn home ", Toast.LENGTH_SHORT).show();
-//                startActivity(intent);
+//
 //                break;
 //
 //            case R.id.nav_produc_management:
@@ -177,6 +180,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 //                Toast.makeText(this, "bạn chọn Quản lí khách hàng   ", Toast.LENGTH_SHORT).show();
 //
 //                break;
+//            case R.id.nav_account:
+//
+//                Toast.makeText(this, "Account được chọn ", Toast.LENGTH_SHORT).show();
+//                startActivity(new Intent(mainActivity,Test01.class));
+//
+//                break;
+//
 //        }
 //        return super.onOptionsItemSelected(item);
 //    }

@@ -1,6 +1,8 @@
 package com.example.appbangiaycomplete;
 
-public class Product {
+import java.io.Serializable;
+
+public class Product implements Serializable {
 
     private int imageProduct;
     private String ProductName;
@@ -23,6 +25,13 @@ public class Product {
         this.color = color;
 
     }
+    public String getProductName() {
+        return ProductName;
+    }
+
+    public void setProductName(String productName) {
+        ProductName = productName;
+    }
 
     public int getImageProduct() {
         return imageProduct;
@@ -32,13 +41,6 @@ public class Product {
         this.imageProduct = imageProduct;
     }
 
-    public String getProductName() {
-        return ProductName;
-    }
-
-    public void setProductName(String productName) {
-        ProductName = productName;
-    }
 
     public String getBrand() {
         return brand;

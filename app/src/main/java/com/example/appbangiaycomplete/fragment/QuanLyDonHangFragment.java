@@ -9,17 +9,9 @@ import android.widget.Button;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.DividerItemDecoration;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.appbangiaycomplete.Activity.MainActivity;
-import com.example.appbangiaycomplete.Adapter.OderAdapter;
-import com.example.appbangiaycomplete.Product;
-import com.example.appbangiaycomplete.R;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class QuanLyDonHangFragment extends Fragment {
     private RecyclerView rcvOder;
@@ -33,25 +25,52 @@ public class QuanLyDonHangFragment extends Fragment {
     }
 
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        mview = inflater.inflate(R.layout.chi_tiet_don_hang, container, false);
-        rcvOder = mview.findViewById(R.id.rcv_oder);
-        mMainActivity = (MainActivity) getActivity();
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(mMainActivity);
-        rcvOder.setLayoutManager(linearLayoutManager);
-        OderAdapter oderAdapter = new OderAdapter(getListOderProduct());
-        rcvOder.setAdapter(oderAdapter);
-        RecyclerView.ItemDecoration itemDecoration = new DividerItemDecoration(mMainActivity,
-                DividerItemDecoration.VERTICAL);
-        rcvOder.addItemDecoration(itemDecoration);
-
+//        mview = inflater.inflate(R.layout.sua_san_pham, container, false);
+//        rcvOder = mview.findViewById(R.id.rcv_oder);
+//        mMainActivity = (MainActivity) getActivity();
+//
+//        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(mMainActivity);
+//        rcvOder.setLayoutManager(linearLayoutManager);
+//
+//        OderAdapter oderAdapter = new OderAdapter(mMainActivity, getListOderProduct());
+//        rcvOder.setAdapter(oderAdapter);
+//
+//        RecyclerView.ItemDecoration itemDecoration = new DividerItemDecoration(mMainActivity,
+//                DividerItemDecoration.VERTICAL);
+//        rcvOder.addItemDecoration(itemDecoration);
+//
+//        init(mview);
+//        btnEditProduct.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Fragment addProductFragment = new ThemSanPhamFragment();
+//                FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
+//                fragmentTransaction.replace(R.id.chi_tiet_don_hang, addProductFragment);
+//              fragmentTransaction.commit();
+//            }
+//        });
+        // thêm sản phẩm
+//        btnAddProduct.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Toast.makeText(getActivity(), "", Toast.LENGTH_SHORT).show();
+//                startActivity(new Intent(mMainActivity, AddProduct.class));
+//            }
+//        });
+        //
         return mview;
     }
 
-    private List<Product> getListOderProduct() {
-        List<Product> listOderProduct = new ArrayList<>();
-        listOderProduct.add(new Product(R.drawable.img_giay, "adidas", "adidas",
-                200, 2, "hàng chính hãng ", 32, "trắng "));
+//    private void init(View view ) {
+//        btnAddProduct = (Button) view.findViewById(R.id.them_don_hang);
+//        btnEditProduct = (Button) view.findViewById(R.id.sua_don_hang);
+//    }
 
-        return listOderProduct;
-    }
+//    private List<Product> getListOderProduct() {
+//        List<Product> listOderProduct = new ArrayList<>();
+//        listOderProduct.add(new Product(R.drawable.img_giay, "adidas", "adidas",
+//                200, 2, "hàng chính hãng ", 32, "trắng "));
+
+//        return listOderProduct;
+//    }
 }

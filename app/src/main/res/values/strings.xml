@@ -12,9 +12,11 @@
     <string name="add_photo">Add Photo </string>
     <string name="ic_search">Icon Search </string>
     <string name="ic_next_to">Icon Next To </string>
-
-
-
+    <string name="img_my_product"> My Product </string>
+    <string name="img_finance"> Finance </string>
+    <string name="action_search"> Search </string>
+    <string name="imgBtn_customer"> Customer </string>
+    <string name="imgBtn_product"> Search </string>
 
 
 </resources>

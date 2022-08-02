@@ -2,7 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content"
+  android:id="@+id/chi_tiet_don_hang_custom">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -27,7 +28,6 @@
                 android:layout_height="0dp"
                 android:layout_gravity="center_vertical"
                 android:layout_weight="1"
-                android:background="@color/white"
                 android:orientation="horizontal">
 
                 <TextView
@@ -82,13 +82,13 @@
                 android:layout_gravity="center_vertical"
                 android:layout_weight="1"
                 android:orientation="horizontal"
-                android:weightSum="9">
+               >
 
                 <TextView
                     android:id="@+id/tv_oder_price"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="4"
+                    android:layout_weight="7"
                     android:text="Giá :"
                     android:textStyle="bold" />
 
@@ -96,15 +96,15 @@
                     android:id="@+id/tv_oder_txt_price"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="3"
-                    android:hint="    700 "
+                    android:layout_weight="4"
+                    android:hint=" 700 "
                     android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/tv_currency_unit"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
+                    android:layout_weight="2"
                     android:text="VND"
                     android:textColor="@color/black"
                     android:textStyle="bold" />
@@ -203,7 +203,34 @@
 
             </LinearLayout>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:weightSum="9">
 
+                <TextView
+                    android:id="@+id/tv_oder_description"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:text="Nội dung  :"
+                    android:textStyle="bold" />
+
+                <TextView
+
+                    android:id="@+id/tv_oder_txt_des"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="5"
+                    android:hint="chính hãng  "
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+
+
+            </LinearLayout>
         </LinearLayout>
 
     </LinearLayout>

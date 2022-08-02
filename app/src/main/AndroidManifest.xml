@@ -10,6 +10,24 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppBanGiayComplete">
         <activity
+            android:name=".Activity.EditProduct"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.AddProduct"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.QuanLySanPham"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.EditOderProduct"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.QuanLyDonHang02"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.AddOderProduct"
+            android:exported="false" />
+        <activity
             android:name=".QuanLySanPhamActivity"
             android:exported="false" />
         <activity
