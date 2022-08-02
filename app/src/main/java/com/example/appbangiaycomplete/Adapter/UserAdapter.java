@@ -1,5 +1,6 @@
 package com.example.appbangiaycomplete.Adapter;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,6 +9,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.appbangiaycomplete.Product;
 import com.example.appbangiaycomplete.R;
 import com.example.appbangiaycomplete.User;
 
@@ -17,8 +19,14 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserViewHolder> {
     private List<User> mListUser;
-
-    public UserAdapter(List<User> mListUser) {
+    private Context mContext;
+    private User user;
+    public void setData(List<User> list) {
+        this.mListUser = list;
+        notifyDataSetChanged();
+    }
+    public UserAdapter(Context context, List<User> mListUser) {
+      this.mContext = context;
         this.mListUser = mListUser;
     }
 

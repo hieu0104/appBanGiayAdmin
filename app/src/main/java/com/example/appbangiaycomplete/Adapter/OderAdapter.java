@@ -35,7 +35,6 @@ public class OderAdapter extends RecyclerView.Adapter<OderAdapter.OderViewHolder
     //
     public void setData(List<Product> list) {
         this.mListOderProduct = list;
-
         notifyDataSetChanged();
     }
 
